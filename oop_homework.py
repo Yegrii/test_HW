@@ -44,7 +44,7 @@ class Product:
             quantity = self.unit
             return round(self.price * quantity, 2)
         else:
-            return f'Your total is: {self.price * quantity} UAH'
+            return f'Total:\n Product: {self.name}\n quantity: {quantity}\n price: {self.price * quantity} UAH'
 
 apple = Product('apple', 36.55, 1)
 juice = Product('juice', 53.80, 0.9)
@@ -56,4 +56,4 @@ cheese = Product('cheese', 312.00, 1)
 butter = Product('butter', 72.40, 0.25)
 meat = Product('meat', 255.00, 1)
 
-print(butter.get_total(4))
+print(bread_half.get_total(4))
