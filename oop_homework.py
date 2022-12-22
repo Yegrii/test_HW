@@ -46,14 +46,14 @@ class Product:
         else:
             return f'Total:\n Product: {self.name}\n quantity: {quantity}\n price: {self.price * quantity} UAH'
 
-apple = Product('apple', 36.55, 1)
-juice = Product('juice', 53.80, 0.9)
-milk = Product('milk', 47.90, 0.85)
-water = Product('water', 12.50, 1.5)
-bread_half = Product('bread', 21.75, 0.5)
-bread_whole = Product('bread', 43.50, 1)
-cheese = Product('cheese', 312.00, 1)
-butter = Product('butter', 72.40, 0.25)
-meat = Product('meat', 255.00, 1)
 
-print(bread_half.get_total(4))
+Shopping Cart
+This class represents the container for the products.
+It's main responsibility is to store information about the purchases and their amount (quantities).
+
+Each cart instance should store data about Product objects in it and corresponding quantity value for each individual product.
+
+ShoppingCart should implement add_product method to put a specified quantity into a cart.quantity argument is optional,
+if omitted just uses Product.unit value instead.
+
+ShoppingCart should implement get_total method to calculate the total price for the entire cart contents.
