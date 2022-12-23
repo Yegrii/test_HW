@@ -47,13 +47,17 @@ class Product:
             return f'Total:\n Product: {self.name}\n quantity: {quantity}\n price: {self.price * quantity} UAH'
 
 
-Shopping Cart
-This class represents the container for the products.
-It's main responsibility is to store information about the purchases and their amount (quantities).
+# Shopping Cart
+# This class represents the container for the products.
+# It's main responsibility is to store information about the purchases and their amount (quantities).
+#
+# Each cart instance should store data about Product objects in it and corresponding quantity value for each individual product.
+#
+# ShoppingCart should implement add_product method to put a specified quantity into a cart.quantity argument is optional,
+# if omitted just uses Product.unit value instead.
+#
+# ShoppingCart should implement get_total method to calculate the total price for the entire cart contents.
 
-Each cart instance should store data about Product objects in it and corresponding quantity value for each individual product.
 
-ShoppingCart should implement add_product method to put a specified quantity into a cart.quantity argument is optional,
-if omitted just uses Product.unit value instead.
-
-ShoppingCart should implement get_total method to calculate the total price for the entire cart contents.
+class ShoppingCart:
+    pass
