@@ -59,5 +59,81 @@ class Product:
 # ShoppingCart should implement get_total method to calculate the total price for the entire cart contents.
 
 
+
 class ShoppingCart:
-    pass
+    # функція ініціалізації
+    def __init__(self):
+        self.products = {}
+
+    def __str__(self):
+        return f'{self.products}'
+
+    def __repr__(self):
+        return f'{self.products}'
+
+    def __eq__(self, other):
+        # функція для порівняння двох об'єктів
+        if not isinstance(other, ShoppingCart):
+            return False
+        return self.products == other.products
+
+    def __hash__(self):
+        return hash(self.products)
+
+    # функція для додавання продукту в корзину
+    def add_product(self, product, quantity=None):
+        if quantity is None:
+            quantity = product.unit
+        if product in self.products:
+            self.products[product] += quantity
+        else:
+            self.products[product] = quantity
+        return f'Product {product.name} added to cart'
+
+    # функція для обчислення загальної суми
+    def get_cart_total(self):
+        prod = []
+        quant = []
+        for key, value in self.products.items():
+            prod.append(key)
+            quant.append(value)
+        total = 0
+        for i in range(len(prod)):
+            total += prod[i].price * quant[i]
+        return ''.join(f'Product: {prod[i].name}\n quantity: {quant[i]}\n '
+            f'price: {round(prod[i].price * quant[i], 2)} UAH\n' for i in range(len(prod))) + \
+            f'Total price: {total} UAH'
+
+# Тестування
+
+# створити продукти
+# створити кошик
+# додати продукти в кошик
+# обчислити загальну суму
+
+
+if __name__ == '__main__':
+    apple = Product('apple', 23.2, 1)
+    juice = Product('juice', 49.60, 0.75)
+    milk = Product('milk', 53.5, 1)
+    bread = Product('bread', 25.5, 1)
+    meat = Product('meat', 221.0, 1)
+    beans = Product('beans', 45.0, 1)
+    sneakers_big = Product('sneakers 3 in 1', 33.45, 1)
+    sneakers_small = Product('sneakers', 16.90, 1)
+
+
+    cart = ShoppingCart()
+    cart.add_product(apple, 2)
+    cart.add_product(juice, 2)
+    cart.add_product(milk, 1)
+    cart.add_product(apple, 2)
+    cart.add_product(juice, 1)
+    cart.add_product(bread, 1)
+    cart.add_product(meat, 0.7)
+    cart.add_product(beans, 1)
+    cart.add_product(sneakers_big, 1)
+    cart.add_product(sneakers_small, 3)
+
+
+    print(cart.get_cart_total())
