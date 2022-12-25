@@ -137,3 +137,30 @@ if __name__ == '__main__':
 
 
     print(cart.get_cart_total())
+
+# Результат
+# Product: apple
+#     quantity: 4
+#     price: 92.8 UAH
+# Product: juice
+#     quantity: 3
+#     price: 148.8 UAH
+# Product: milk
+#     quantity: 1
+#     price: 53.5 UAH
+# Product: bread
+#     quantity: 1
+#     price: 25.5 UAH
+# Product: meat
+#     quantity: 0.7
+#     price: 154.7 UAH
+# Product: beans
+#     quantity: 1
+#     price: 45.0 UAH
+# Product: sneakers 3 in 1
+#     quantity: 1
+#     price: 33.45 UAH
+# Product: sneakers
+#     quantity: 3
+#     price: 50.7 UAH
+# Total price: 549.35 UAH
